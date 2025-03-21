@@ -61,10 +61,8 @@ function showPeople() {
 }
 
 // entry point of the app
-export function main() {
+export function task1() {
     setInterval(() => checkForty(people), 1000)
     setInterval(() => addPerson(people), 2000)
     setInterval(showPeople, 1500)
 }
-
-main()
