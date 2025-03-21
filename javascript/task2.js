@@ -84,6 +84,6 @@ function fight() {
     })
 }
 
-export function task2() {
+export function gladiatorsTask() {
     fight()
 }

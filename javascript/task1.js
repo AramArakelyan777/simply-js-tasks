@@ -51,7 +51,7 @@ function showPeople() {
 }
 
 // entry point of the app
-export function task1() {
+export function agesPeopleTask() {
     setInterval(checkForty, 1000)
     setInterval(addPerson, 2000)
     setInterval(showPeople, 1500)
