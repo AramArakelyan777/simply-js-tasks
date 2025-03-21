@@ -1,0 +1,8 @@
+{
+  "name": "simply-js-tasks",
+  "version": "1.0.0",
+  "description": "A project for JS tasks.",
+  "main": "index.js",
+  "author": "Aram Arakelyan <aram777arakelyan@gmail.com>",
+  "license": "MIT"
+}
