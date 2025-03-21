@@ -13,40 +13,32 @@ const names = [
     "Krle",
 ]
 
-function Person(name = "", age = 0) {
+function Person(name, age) {
     this.name = name
     this.age = age
-
-    setInterval(
-        function () {
-            this.age++
-        }.bind(this),
-        1000
-    )
-
-    this.logStatus = function () {
-        console.log(`Person ${this.name}`)
-    }
+    this.intervalId = setInterval(() => {
+        this.age++
+    }, 1000)
 }
 
-const people = []
-people.push(
+const people = [
     new Person("Vahagn", 22),
     new Person("Armen", 34),
     new Person("Shrek", 24),
-    new Person("Abraham", 31)
-)
+    new Person("Abraham", 31),
+]
 
-function checkForty(people) {
-    for (const person of people) {
-        if (person.age >= 40) {
-            console.log(`${person.name} died at not a very good old age.`)
-            people.splice(people.indexOf(person), 1)
+function checkForty() {
+    for (let i = people.length - 1; i >= 0; i--) {
+        if (people[i].age >= 40) {
+            console.log(`${people[i].name} died not at a very good old age.`)
+            clearInterval(people[i].intervalId)
+            people.splice(i, 1)
         }
     }
 }
 
-function addPerson(people) {
+function addPerson() {
     const randomName = names[Math.floor(Math.random() * names.length)]
     const randomAge = Math.floor(Math.random() * 50) + 1
 
@@ -55,14 +47,12 @@ function addPerson(people) {
 
 function showPeople() {
     console.clear()
-    for (const person of people) {
-        console.log(`${person.name}, who is ${person.age}`)
-    }
+    people.forEach((person) => console.log(`${person.name}, age ${person.age}`))
 }
 
 // entry point of the app
 export function task1() {
-    setInterval(() => checkForty(people), 1000)
-    setInterval(() => addPerson(people), 2000)
+    setInterval(checkForty, 1000)
+    setInterval(addPerson, 2000)
     setInterval(showPeople, 1500)
 }
