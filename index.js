@@ -1,5 +1,12 @@
-import { task1 } from "./javascript/task1.js"
-import { task2 } from "./javascript/task2.js"
+// import { agesPeopleTask } from "./javascript/task1.js"
+// import { gladiatorsTask } from "./javascript/task2.js"
+import { binarySearch } from "./algorithms/task1.js"
 
-// task1()
-task2()
+// js tasks
+
+// agesPeopleTask()
+// gladiatorsTask()
+
+// algorithmic tasks
+
+binarySearch()

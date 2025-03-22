@@ -6,7 +6,7 @@
     "author": "Aram Arakelyan <aram777arakelyan@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "start": "node index.js --watch"
+        "start": "node --watch index.js"
     },
     "type": "module",
     "devDependencies": {
