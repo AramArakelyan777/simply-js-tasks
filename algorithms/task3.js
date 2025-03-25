@@ -75,10 +75,35 @@ function listToNumber(head) {
         numeral *= 10
         head = head.next
     }
+
     return num
 }
 
-function addTwoLists(l1, l2) {}
+function numberToList(num) {
+    if (!num) {
+        const list = new LinkedList()
+        list.append(0)
+        return list
+    }
+
+    let digitNodes = new Node(0),
+        current = digitNodes
+
+    while (num) {
+        let digit = num % 10
+        current.next = new Node(digit)
+        current = current.next
+        num = Math.floor(num / 10)
+    }
+
+    const list = new LinkedList()
+    list.head = digitNodes.next
+    return list
+}
+
+function addTwoLists(l1, l2) {
+    return numberToList(listToNumber(l1.head) + listToNumber(l2.head))
+}
 
 export function sumOfElements() {
     const l1 = new LinkedList()
@@ -92,5 +117,5 @@ export function sumOfElements() {
     l2.append(6)
     l2.append(4)
 
-    // addTwoLists(l1, l2).printList()
+    addTwoLists(l1, l2).printList()
 }
