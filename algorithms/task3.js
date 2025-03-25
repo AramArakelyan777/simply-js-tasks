@@ -12,12 +12,14 @@ class LinkedList {
 
     append(value) {
         let newNode = new Node(value)
+
         if (!this.head) {
             this.head = newNode
             return
         }
 
         let current = this.head
+
         while (current.next) {
             current = current.next
         }
@@ -62,4 +64,33 @@ class LinkedList {
 
         prev.next = current.next
     }
+}
+
+function listToNumber(head) {
+    let num = 0,
+        numeral = 1
+
+    while (head) {
+        num += head.value * numeral
+        numeral *= 10
+        head = head.next
+    }
+    return num
+}
+
+function addTwoLists(l1, l2) {}
+
+export function sumOfElements() {
+    const l1 = new LinkedList()
+    const l2 = new LinkedList()
+
+    l1.append(2)
+    l1.append(4)
+    l1.append(3)
+
+    l2.append(5)
+    l2.append(6)
+    l2.append(4)
+
+    // addTwoLists(l1, l2).printList()
 }
